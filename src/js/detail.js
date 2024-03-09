@@ -3,7 +3,6 @@ const workoutParam = urlParams.get("name");
 
 function updateUI(data) {
   const workout = data.find((workout) => workout.slug == workoutParam);
-  console.log(workoutParam, workout);
 
   const categories = workout.categories
     .map(
@@ -21,14 +20,12 @@ function updateUI(data) {
   $("#duration").text(workout.duration + " min");
   $("#set").text(workout.set);
 
-  const equipment = workout.equipment
-    ? workout.equipment.map((equip) => `${equip}, `).join("")
-    : "No equipment needed";
+  const equipment = workout.equipment ?? "No equipment needed";
   $("#equipment").text(equipment);
 }
 
 var url =
-  "https://indexeddb-e5d4a-default-rtdb.asia-southeast1.firebasedatabase.app/posts.json";
+  "https://indexeddb-e5d4a-default-rtdb.asia-southeast1.firebasedatabase.app/workouts.json";
 var networkDataReceived = false;
 
 fetch(url)
@@ -43,7 +40,11 @@ fetch(url)
   .then(function (data) {
     networkDataReceived = true;
     console.log("From web", data);
-    updateUI(data);
+    const dataArray = [];
+    for (var key in data) {
+      dataArray.push(data[key]);
+    }
+    updateUI(dataArray);
   })
   .catch(function (err) {
     console.log(err)

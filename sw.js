@@ -73,7 +73,7 @@ function isInArray(string, array) {
 
 self.addEventListener('fetch', function (event) {
 
-  var url = 'https://indexeddb-e5d4a-default-rtdb.asia-southeast1.firebasedatabase.app/posts.json';
+  var url = 'https://indexeddb-e5d4a-default-rtdb.asia-southeast1.firebasedatabase.app/workouts';
   if (event.request.url.indexOf(url) > -1) {
     event.respondWith(fetch(event.request)
       .then(function (res) {
