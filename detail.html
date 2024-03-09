@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Workout Detail</title>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    />
+    <link rel="stylesheet" href="/src/css/app.css" />
+    <link rel="stylesheet" href="/src/css/feed.css" />
+    <link rel="manifest" href="/manifest.json" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="apple-mobile-web-app-title" content="PWAGram" />
+    <link
+      rel="apple-touch-icon"
+      href="/src/images/icons/apple-icon-57x57.png"
+      sizes="57x57"
+    />
+    <link
+      rel="apple-touch-icon"
+      href="/src/images/icons/apple-icon-60x60.png"
+      sizes="60x60"
+    />
+    <link
+      rel="apple-touch-icon"
+      href="/src/images/icons/apple-icon-72x72.png"
+      sizes="72x72"
+    />
+    <link
+      rel="apple-touch-icon"
+      href="/src/images/icons/apple-icon-76x76.png"
+      sizes="76x76"
+    />
+    <link
+      rel="apple-touch-icon"
+      href="/src/images/icons/apple-icon-114x114.png"
+      sizes="114x114"
+    />
+    <link
+      rel="apple-touch-icon"
+      href="/src/images/icons/apple-icon-120x120.png"
+      sizes="120x120"
+    />
+    <link
+      rel="apple-touch-icon"
+      href="/src/images/icons/apple-icon-144x144.png"
+      sizes="144x144"
+    />
+    <link
+      rel="apple-touch-icon"
+      href="/src/images/icons/apple-icon-152x152.png"
+      sizes="152x152"
+    />
+    <link
+      rel="apple-touch-icon"
+      href="/src/images/icons/apple-icon-180x180.png"
+      sizes="180x180"
+    />
+    <meta
+      name="msapplication-TileImage"
+      content="/src/images/icons/app-icon-144x144.png"
+    />
+    <meta name="msapplication-TileColor" content="#fff" />
+    <meta name="theme-color" content="#3f51b5" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              clifford: "#da373d",
+            },
+          },
+        },
+      };
+    </script>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+
+    <style>
+      * {
+        font-family: system-ui, BlinkMacSystemFont;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="app">
+      <header>
+        <nav class="navbar bg-base-100 fixed top-0 z-[10]">
+          <div class="w-full flex justify-center items-center">
+            <a class="btn btn-ghost text-xl" href="/">GymBros</a>
+          </div>
+        </nav>
+      </header>
+
+      <main
+        class="w-full min-h-screen flex justify-center items-center bg-grey-100 px-10 lg:px-24 pt-20 md:pt-0"
+      >
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-5 items-center lg:gap-16">
+          <div>
+            <figure>
+              <img
+                src="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg"
+                alt=""
+                id="workout_image"
+                class="w-full rounded-box"
+              />
+            </figure>
+
+          </div>
+          
+          <div class="flex flex-col justify-center gap-3">
+            <div class="flex flex-col lg:flex-row gap-3 lg:items-center">
+              <h1 class="text-start text-white font-bold text-3xl" id="workout_name">
+                Push Up
+              </h1>
+              
+              <div class="flex flex-wrap gap-3" id="categories"></div>
+            </div>
+
+            <div class="flex gap-3 items-center">
+              <svg
+                class="w-4 h-4 fill-[#8e8e8e]"
+                viewBox="0 0 448 512"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+                <path
+                  d="M176 0c-17.7 0-32 14.3-32 32s14.3 32 32 32h16V98.4C92.3 113.8 16 200 16 304c0 114.9 93.1 208 208 208s208-93.1 208-208c0-41.8-12.3-80.7-33.5-113.2l24.1-24.1c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L355.7 143c-28.1-23-62.2-38.8-99.7-44.6V64h16c17.7 0 32-14.3 32-32s-14.3-32-32-32H224 176zm72 192V320c0 13.3-10.7 24-24 24s-24-10.7-24-24V192c0-13.3 10.7-24 24-24s24 10.7 24 24z"
+                ></path>
+              </svg>
+              <p id="duration">0 min</p>
+            </div>
+
+            <div class="flex gap-3 items-center">
+              <svg class="w-4 h-4 fill-[#8e8e8e]" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+
+                <!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+                <path d="M0 224c0 17.7 14.3 32 32 32s32-14.3 32-32c0-53 43-96 96-96H320v32c0 12.9 7.8 24.6 19.8 29.6s25.7 2.2 34.9-6.9l64-64c12.5-12.5 12.5-32.8 0-45.3l-64-64c-9.2-9.2-22.9-11.9-34.9-6.9S320 19.1 320 32V64H160C71.6 64 0 135.6 0 224zm512 64c0-17.7-14.3-32-32-32s-32 14.3-32 32c0 53-43 96-96 96H192V352c0-12.9-7.8-24.6-19.8-29.6s-25.7-2.2-34.9 6.9l-64 64c-12.5 12.5-12.5 32.8 0 45.3l64 64c9.2 9.2 22.9 11.9 34.9 6.9s19.8-16.6 19.8-29.6V448H352c88.4 0 160-71.6 160-160z"></path>
+              
+              </svg>
+              
+              <p id="set">-</p>
+            </div>
+
+            <div class="flex gap-3 items-center">
+              <svg class="w-4 h-4 fill-[#8e8e8e]" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+
+                <!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+                <path d="M352 320c88.4 0 160-71.6 160-160c0-15.3-2.2-30.1-6.2-44.2c-3.1-10.8-16.4-13.2-24.3-5.3l-76.8 76.8c-3 3-7.1 4.7-11.3 4.7H336c-8.8 0-16-7.2-16-16V118.6c0-4.2 1.7-8.3 4.7-11.3l76.8-76.8c7.9-7.9 5.4-21.2-5.3-24.3C382.1 2.2 367.3 0 352 0C263.6 0 192 71.6 192 160c0 19.1 3.4 37.5 9.5 54.5L19.9 396.1C7.2 408.8 0 426.1 0 444.1C0 481.6 30.4 512 67.9 512c18 0 35.3-7.2 48-19.9L297.5 310.5c17 6.2 35.4 9.5 54.5 9.5zM80 408a24 24 0 1 1 0 48 24 24 0 1 1 0-48z"></path>
+              
+              </svg>
+              
+              <p id="equipment">No equipment needed</p>
+            </div>
+
+            <div id="description" class="mt-5 leading-loose">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sit amet nulla non turpis fringilla venenatis. Pellentesque tempus, metus quis suscipit pharetra, velit eros euismod metus, in rutrum ipsum nisi sit amet lorem. Sed dapibus imperdiet purus eget semper. Donec cursus id neque nec ultricies. Nullam tortor elit, maximus ut nisl ut, vehicula malesuada nibh. Praesent ac mattis libero. Nullam vel nunc molestie, pretium dolor sed, convallis tortor. Etiam fringilla arcu ac purus feugiat molestie.Integer bibendum ornare lectus ut scelerisque. Aliquam viverra suscipit mauris id commodo. Fusce eu augue pharetra augue placerat accumsan et sodales metus. Cras aliquam purus eros, ut fermentum nisl rhoncus a. Donec auctor lacinia pharetra. Sed consectetur imperdiet odio a scelerisque. Integer augue lacus, tempor vestibulum consequat ac, efficitur vel leo. Proin vitae elementum metus. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aliquam ex sem, ullamcorper eget congue id, faucibus tincidunt nulla.
+            </div>
+          </div>
+          
+        </div>
+      </main>
+    </div>
+    <script src="/src/js/promise.js"></script>
+    <script src="/src/js/fetch.js"></script>
+    <script src="/src/js/idb.js"></script>
+    <script src="/src/js/utility.js"></script>
+    <script src="/src/js/app.js"></script>
+    <script src="/src/js/detail.js"></script>
+  </body>
+</html>
