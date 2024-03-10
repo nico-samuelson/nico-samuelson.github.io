@@ -3,6 +3,7 @@ const workoutParam = urlParams.get("name");
 
 function updateUI(data) {
   const workout = data.find((workout) => workout.slug == workoutParam);
+  document.title = workout.name + " | FitFlow";
 
   const categories = workout.categories
     .map(

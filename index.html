@@ -7,69 +7,25 @@
       content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
     />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>PWAGram</title>
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/icon?family=Material+Icons"
-    />
-    <link rel="stylesheet" href="/src/css/app.css" />
-    <link rel="stylesheet" href="/src/css/feed.css" />
+    <title>FitFlow</title>
+
+    <!-- Manifests -->
     <link rel="manifest" href="/manifest.json" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black" />
-    <meta name="apple-mobile-web-app-title" content="PWAGram" />
-    <link
-      rel="apple-touch-icon"
-      href="/src/images/icons/apple-icon-57x57.png"
-      sizes="57x57"
-    />
-    <link
-      rel="apple-touch-icon"
-      href="/src/images/icons/apple-icon-60x60.png"
-      sizes="60x60"
-    />
-    <link
-      rel="apple-touch-icon"
-      href="/src/images/icons/apple-icon-72x72.png"
-      sizes="72x72"
-    />
-    <link
-      rel="apple-touch-icon"
-      href="/src/images/icons/apple-icon-76x76.png"
-      sizes="76x76"
-    />
-    <link
-      rel="apple-touch-icon"
-      href="/src/images/icons/apple-icon-114x114.png"
-      sizes="114x114"
-    />
-    <link
-      rel="apple-touch-icon"
-      href="/src/images/icons/apple-icon-120x120.png"
-      sizes="120x120"
-    />
-    <link
-      rel="apple-touch-icon"
-      href="/src/images/icons/apple-icon-144x144.png"
-      sizes="144x144"
-    />
-    <link
-      rel="apple-touch-icon"
-      href="/src/images/icons/apple-icon-152x152.png"
-      sizes="152x152"
-    />
-    <link
-      rel="apple-touch-icon"
-      href="/src/images/icons/apple-icon-180x180.png"
-      sizes="180x180"
-    />
+    <meta name="apple-mobile-web-app-title" content="FitFlow" />
     <meta
       name="msapplication-TileImage"
-      content="/src/images/icons/app-icon-144x144.png"
+      content="/src/images/icons/icon-144x144.png"
     />
-    <meta name="msapplication-TileColor" content="#fff" />
-    <meta name="theme-color" content="#3f51b5" />
+
+    <!-- AOS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- jQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    <!-- Tailwind -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
       tailwind.config = {
@@ -83,6 +39,7 @@
       };
     </script>
 
+    <!-- Daisy UI -->
     <link
       href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css"
       rel="stylesheet"
@@ -97,18 +54,19 @@
   </head>
   <body>
     <div id="app">
+      <!-- Navbar -->
       <header>
         <nav class="navbar bg-base-100 fixed top-0 z-[10]">
           <div class="w-full flex justify-center items-center">
-            <a class="btn btn-ghost text-xl" href="/">GymBros</a>
+            <a class="btn btn-ghost text-xl" href="/">FitFlow</a>
           </div>
         </nav>
       </header>
 
       <main
-        class="w-full h-screen flex flex-col gap-10 justify-start items-center bg-grey-100 px-10 py-20 md:px-24 py-10"
+        class="w-full h-screen flex flex-col gap-8 justify-start items-center bg-grey-100 px-10 py-20 md:px-24 py-10"
       >
-        <h1 class="text-xl md:text-4xl lg:text-5xl text-white text-center font-bold">
+        <h1 class="text-xl md:text-3xl lg:text-4xl text-white text-center font-bold">
           Choose your workout
         </h1>
 
@@ -122,6 +80,7 @@
               class="categories absolute opacity-0 w-full h-full"
               checked="checked"
               data-waschecked="true"
+              value="all"
             />
             <label
               for="all"
@@ -139,6 +98,7 @@
               class="categories absolute opacity-0 w-full h-full"
               checked="checked"
               data-waschecked="true"
+              value="Arm"
             />
             <label
               for="arm"
@@ -156,6 +116,7 @@
               class="categories absolute opacity-0 w-full h-full"
               checked="checked"
               data-waschecked="true"
+              value="Core"
             />
             <label
               for="core"
@@ -173,6 +134,7 @@
               class="categories absolute opacity-0 w-full h-full"
               checked="checked"
               data-waschecked="true"
+              value="Leg"
             />
             <label
               for="leg"
@@ -190,6 +152,7 @@
               class="categories absolute opacity-0 w-full h-full"
               checked="checked"
               data-waschecked="true"
+              value="Cardio"
             />
             <label
               for="cardio"
@@ -200,44 +163,26 @@
           </div>
         </section>
 
+        <!-- Search -->
+        <section class="w-full md:w-1/2">
+          <label class="input input-bordered flex items-center gap-2 w-full">
+            <input type="text" class="grow" id="search_workout" placeholder="Search workout" />
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="w-4 h-4 opacity-70"><path fill-rule="evenodd" d="M9.965 11.026a5 5 0 1 1 1.06-1.06l2.755 2.754a.75.75 0 1 1-1.06 1.06l-2.755-2.754ZM10.5 7a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0Z" clip-rule="evenodd" /></svg>
+          </label>
+        </section>
+
         <!-- Workouts -->
         <section class="grid grid-cols-1 md:grid-cols-3 gap-10 px-0 pb-10 md:px-24 workouts">
         </section>
       </main>
     </div>
+    
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="/src/js/promise.js"></script>
     <script src="/src/js/fetch.js"></script>
     <script src="/src/js/idb.js"></script>
     <script src="/src/js/utility.js"></script>
     <script src="/src/js/app.js"></script>
     <script src="/src/js/feed.js"></script>
-
-    <script>
-      $(document).ready(function () {
-        let category = 'all'
-
-        // add click event to radio buttons
-        $('input[name="categories"]').click(function () {
-           // remove was checked from other radios
-          $('input[name="categories"]').data("waschecked", false);
-          $('input[name="categories"]').next().removeClass("bg-primary text-white");
-          $('input[name="categories"]').next().addClass("bg-neutral text-primary");
-
-          var $radio = $(this);
-
-          // if this was previously checked
-          if ($radio.data("waschecked") == true) {
-            $radio.prop("checked", false);
-            $radio.data("waschecked", false);
-            $radio.next().removeClass("bg-primary text-white");
-            $radio.next().addClass("bg-neutral text-primary");
-          } else {
-            $radio.data("waschecked", true);
-            $radio.next().removeClass("bg-neutral text-primary");
-            $radio.next().addClass("bg-primary text-white");
-          }
-        });
-      });
-    </script>
   </body>
 </html>
